@@ -21,7 +21,9 @@ public class Reduce {
     }
 
     public int getMaxValue() {
-        throw new NotImplementedException();
+        return arrayList.stream()
+                .reduce(Math::max)
+                .orElse(0);
     }
 
     public int getLastOdd() {
