@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Reduce {
 
@@ -27,6 +28,9 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.stream()
+                .filter(integer -> integer % 2 != 0)
+                .reduce((integer, nextInteger) -> nextInteger)
+                .orElse(0);
     }
 }
